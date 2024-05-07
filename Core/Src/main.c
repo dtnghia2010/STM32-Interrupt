@@ -104,8 +104,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   setTimer0(10);
   setTimer1(10);
-  setTimer2(10);
-//  setTimer2(500);
+  setTimer2(5);
   while (1)
       {
     /* USER CODE END WHILE */
@@ -123,17 +122,17 @@ int main(void)
 			  hour=0;
 		  }
 		  updateClockBuffer();
-		  setTimer0(1);
+		  setTimer0(100);
 	   }
 
 	   if (timer1_flag == 1){
 		   HAL_GPIO_TogglePin(GPIOA,LED_RED_Pin);
 		   HAL_GPIO_TogglePin(GPIOA,DOT_Pin);
-		   setTimer1(10);
+		   setTimer1(100);
 	   }
 	   if (timer2_flag == 1){
  		  update7SEG(index_led++);
- 		  setTimer2(10);
+ 		  setTimer2(25);
 
 	   }
     /* USER CODE BEGIN 3 */
